@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog & Kontak Resmi - Buana Paksa</title>
+    <title>Buana Paksa Indonesia - Link</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,102 +16,84 @@
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col justify-between">
 
-    <main class="w-full max-w-md mx-auto px-5 pt-8 pb-24">
+    <!-- Container Utama (Seukuran Layar HP) -->
+    <main class="w-full max-w-md mx-auto px-6 pt-10 pb-24">
         
-        <header class="flex flex-col items-center text-center mb-6">
-            <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-sm mb-3 text-white font-bold text-xl">
+        <!-- HEADER / PROFIL -->
+        <header class="flex flex-col items-center text-center mb-8">
+            <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-xs mb-3 text-white font-bold text-xl">
                 BP
             </div>
             <h1 class="text-lg font-bold text-gray-800 tracking-tight">Buana Paksa Indonesia</h1>
-            <p class="text-xs text-gray-500 mt-0.5">Solusi Material Konstruksi & Atap UPVC Modern.</p>
+            <p class="text-xs text-gray-500 mt-1">Material Konstruksi & Atap UPVC Modern</p>
         </header>
 
-        <section class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-4 shadow-2xs border border-orange-100 mb-6">
-            <div class="flex items-center gap-1.5 mb-2">
-                <span class="animate-ping inline-flex h-2 w-2 rounded-full bg-red-500 opacity-75"></span>
-                <span class="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">Promo Bulan Ini</span>
-            </div>
-            <img src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&w=600&q=80" alt="Atap UPVC Promo" class="w-full h-36 object-cover rounded-xl mb-3 shadow-2xs">
-            <h2 class="font-bold text-sm text-gray-800">Atap UPVC Premium — Double Layer Berongga</h2>
-            <p class="text-xs text-gray-500 mt-1">Teknologi dinding ganda efektif meredam panas matahari ekstrem & suara bising air hujan secara maksimal.</p>
-            <a href="https://wa.me/628123456789?text=Halo%20Buana%20Paksa,%20saya%20tertarik%20dengan%20Promo%20Atap%20UPVC%20Premium" target="_blank" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition shadow-xs">
-                <span>🛒 Ambil Diskon / Minta Penawaran</span>
+        <!-- AREA PROMO UTAMA (PALING ATAS) -->
+        <section class="bg-white rounded-2xl p-4 shadow-xs border border-gray-100 mb-6 text-center">
+            <span class="inline-block bg-red-100 text-red-600 text-[10px] font-bold px-2 py-0.5 rounded-full mb-3 uppercase tracking-wider">
+                🔥 Promo Bulan Ini
+            </span>
+            <img src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&w=600&q=80" alt="Promo Atap" class="w-full h-36 object-cover rounded-xl mb-3">
+            <h2 class="font-bold text-sm text-gray-800">Atap UPVC Premium Berongga</h2>
+            <a href="https://wa.me/628123456789?text=Halo%20Buana%20Paksa,%20saya%20tertarik%20dengan%20Promo%20Atap%20UPVC" 
+               target="_blank" 
+               class="mt-3 inline-block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs py-2.5 rounded-xl transition">
+                🛒 Ambil Diskon via WhatsApp
             </a>
         </section>
 
-        <div class="space-y-4">
-
-            <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-2xs">
-                <h3 class="font-bold text-sm text-blue-600 mb-2 flex items-center gap-2">🏢 Tentang Kami</h3>
-                <p class="text-xs text-gray-600 leading-relaxed mb-3">Penyedia spesialis material konstruksi sejak 2015. Berkomitmen menghadirkan produk atap berstandar tinggi untuk hunian nyaman dan bangunan industri yang kokoh.</p>
-                <div class="grid grid-cols-3 gap-1.5 text-[10px] text-center font-medium text-gray-500">
-                    <div class="bg-gray-50 p-2 rounded-lg border border-gray-100">🛡️ Garansi 15 Thn</div>
-                    <div class="bg-gray-50 p-2 rounded-lg border border-gray-100">🚚 Kirim Se-RI</div>
-                    <div class="bg-gray-50 p-2 rounded-lg border border-gray-100">📐 Free Konsultasi</div>
+        <!-- TOMBOL MENU UTAMA (GAYA LINKTREE MURNI) -->
+        <nav class="space-y-3.5">
+            
+            <!-- Link 1: Tentang Kami -->
+            <a href="tentang-kami.html" class="flex items-center justify-between p-4 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition">
+                <div class="flex items-center gap-3">
+                    <span class="text-base">🏢</span>
+                    <span class="font-medium text-sm text-gray-800">Tentang Kami</span>
                 </div>
-            </div>
+                <span class="text-gray-400 text-xs">→</span>
+            </a>
 
-            <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-2xs">
-                <h3 class="font-bold text-sm text-blue-600 mb-3 flex items-center gap-2">🏗️ Produk Kami</h3>
-                <div class="space-y-3">
-                    <div class="flex gap-3 border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=150&q=80" class="w-16 h-16 object-cover rounded-lg bg-gray-100">
-                        <div>
-                            <h4 class="font-semibold text-xs text-gray-800">UPVC Single Layer</h4>
-                            <p class="text-[11px] text-gray-500 mt-0.5">Ringan, ekonomis, tahan karat. Ideal untuk kanopi minimalis rumah tinggal.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-3 border-b border-gray-100 pb-3 last:border-0 last:pb-0">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=150&q=80" class="w-16 h-16 object-cover rounded-lg bg-gray-100">
-                        <div>
-                            <h4 class="font-semibold text-xs text-gray-800">Insulasi Peredam Panas</h4>
-                            <p class="text-[11px] text-gray-500 mt-0.5">Aluminium foil foam pelapis bawah atap agar ruangan kerja jauh lebih sejuk.</p>
-                        </div>
-                    </div>
+            <!-- Link 2: Produk -->
+            <a href="produk.html" class="flex items-center justify-between p-4 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition">
+                <div class="flex items-center gap-3">
+                    <span class="text-base">🏗️</span>
+                    <span class="font-medium text-sm text-gray-800">Produk & Katalog</span>
                 </div>
-            </div>
+                <span class="text-gray-400 text-xs">→</span>
+            </a>
 
-            <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-2xs">
-                <h3 class="font-bold text-sm text-blue-600 mb-2 flex items-center gap-2">📸 Portofolio Proyek</h3>
-                <p class="text-[11px] text-gray-400 mb-3">Beberapa pengerjaan struktur yang telah kami selesaikan:</p>
-                <ul class="space-y-2 text-xs text-gray-700">
-                    <li class="flex items-start gap-2">
-                        <span class="text-blue-500 font-bold">•</span>
-                        <div><strong>Kawasan Industri Candi:</strong> Pemasangan 2.500 m² Atap Pabrik Logistik.</div>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-blue-500 font-bold">•</span>
-                        <div><strong>Kluster Graha Estetika:</strong> Kanopi rumah minimalis modern bebas berisik hujan.</div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="bg-white rounded-xl p-4 border border-gray-200 shadow-2xs text-center">
-                <h3 class="font-bold text-sm text-blue-600 mb-3 flex items-center justify-center gap-2">📞 Hubungi & Transaksi</h3>
-                
-                <div class="grid grid-cols-2 gap-2 mb-3">
-                    <a href="#tokopedia" class="flex items-center justify-center gap-1.5 py-2 px-3 bg-emerald-50 text-emerald-700 rounded-lg border border-emerald-200 font-semibold text-xs transition">
-                        <span>🟩</span> Tokopedia
-                    </a>
-                    <a href="#shopee" class="flex items-center justify-center gap-1.5 py-2 px-3 bg-orange-50 text-orange-700 rounded-lg border border-orange-200 font-semibold text-xs transition">
-                        <span>🟧</span> Shopee
-                    </a>
+            <!-- Link 3: Portofolio -->
+            <a href="portofolio.html" class="flex items-center justify-between p-4 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition">
+                <div class="flex items-center gap-3">
+                    <span class="text-base">📸</span>
+                    <span class="font-medium text-sm text-gray-800">Portofolio Proyek</span>
                 </div>
-                
-                <p class="text-[10px] text-gray-400">📍 Kantor Pusat: Jl. Teuku Umar No. 12, Semarang</p>
-            </div>
+                <span class="text-gray-400 text-xs">→</span>
+            </a>
 
+            <!-- Link 4: Kontak -->
+            <a href="kontak.html" class="flex items-center justify-between p-4 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition">
+                <div class="flex items-center gap-3">
+                    <span class="text-base">📞</span>
+                    <span class="font-medium text-sm text-gray-800">Hubungi Kami</span>
+                </div>
+                <span class="text-gray-400 text-xs">→</span>
+            </a>
+
+        </nav>
+
+        <!-- OFFICIAL MARKETPLACE LINKS -->
+        <div class="mt-8 pt-6 border-t border-gray-200 flex justify-center gap-4 text-xs font-medium">
+            <a href="#tokopedia" class="text-emerald-600 hover:underline">🟩 Tokopedia</a>
+            <a href="#shopee" class="text-orange-600 hover:underline">🟧 Shopee</a>
         </div>
+
     </main>
 
-    <div class="fixed bottom-4 left-0 right-0 max-w-md mx-auto px-5 z-50">
-        <a href="https://wa.me/628123456789?text=Halo%20Tim%20Buana%20Paksa,%20saya%20ingin%20konsultasi%20mengenai%20kebutuhan%20material." target="_blank" class="flex items-center justify-center gap-2 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl shadow-md transition text-xs">
-            💬 Tanya Kebutuhan Proyek via WhatsApp
-        </a>
-    </div>
-
+    <!-- FOOTER -->
     <footer class="w-full text-center py-4 text-[10px] text-gray-400 bg-white border-t border-gray-100">
-        &copy; 2026 Buana Paksa Indonesia. All rights reserved.
+        &copy; 2026 Buana Paksa Indonesia.
     </footer>
 
 </body>
