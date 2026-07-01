@@ -3,97 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buana Paksa Indonesia - Link</title>
+    <title>Buana Paksa Indonesia - Link Hub</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col justify-between">
+<!-- Mengunci layar (overflow-hidden, h-screen) agar anti-scroll -->
+<body class="bg-gray-50 text-gray-900 antialiased h-screen overflow-hidden flex flex-col justify-between">
 
-    <!-- Container Utama (Seukuran Layar HP) -->
-    <main class="w-full max-w-md mx-auto px-6 pt-10 pb-24">
+    <!-- Container Utama (Maksimal seukuran layar HP & memenuhi tinggi layar secara pas) -->
+    <main class="w-full max-w-md mx-auto px-6 py-6 flex flex-col justify-center h-full">
         
         <!-- HEADER / PROFIL -->
-        <header class="flex flex-col items-center text-center mb-8">
-            <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-xs mb-3 text-white font-bold text-xl">
+        <header class="flex flex-col items-center text-center mb-5">
+            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-xs mb-2 text-white font-bold text-lg">
                 BP
             </div>
-            <h1 class="text-lg font-bold text-gray-800 tracking-tight">Buana Paksa Indonesia</h1>
-            <p class="text-xs text-gray-500 mt-1">Material Konstruksi & Atap UPVC Modern</p>
+            <h1 class="text-base font-bold text-gray-800 tracking-tight">BUANA PAKSA INDONESIA</h1>
+            <p class="text-[11px] text-gray-500 mt-0.5">Material Konstruksi & Atap UPVC Modern</p>
         </header>
 
         <!-- AREA PROMO UTAMA (PALING ATAS) -->
-        <section class="bg-white rounded-2xl p-4 shadow-xs border border-gray-100 mb-6 text-center">
-            <span class="inline-block bg-red-100 text-red-600 text-[10px] font-bold px-2 py-0.5 rounded-full mb-3 uppercase tracking-wider">
-                🔥 Promo Bulan Ini
+        <section class="bg-white rounded-2xl p-3 shadow-xs border border-gray-100 mb-5 text-center">
+            <span class="inline-block bg-red-100 text-red-600 text-[9px] font-bold px-2 py-0.5 rounded-full mb-2 uppercase tracking-wider">
+                🔥 PROMO BULAN INI
             </span>
-            <img src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&w=600&q=80" alt="Promo Atap" class="w-full h-36 object-cover rounded-xl mb-3">
-            <h2 class="font-bold text-sm text-gray-800">Atap UPVC Premium Berongga</h2>
+            <img src="https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&w=600&q=80" alt="Promo Atap" class="w-full h-32 object-cover rounded-xl mb-2.5">
+            <h2 class="font-bold text-xs text-gray-800 uppercase tracking-wide">ATAP UPVC PREMIUM BERONGGA</h2>
             <a href="https://wa.me/628123456789?text=Halo%20Buana%20Paksa,%20saya%20tertarik%20dengan%20Promo%20Atap%20UPVC" 
                target="_blank" 
-               class="mt-3 inline-block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs py-2.5 rounded-xl transition">
-                🛒 Ambil Diskon via WhatsApp
+               class="mt-2.5 inline-block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-[11px] py-2 rounded-xl transition uppercase tracking-wider">
+                🛒 AMBIL DISKON VIA WHATSAPP
             </a>
         </section>
 
-        <!-- TOMBOL MENU UTAMA (GAYA LINKTREE MURNI) -->
-        <nav class="space-y-3.5">
+        <!-- TOMBOL MENU UTAMA (CAPSLOCK, DI TENGAH, TANPA IKON BANJIR) -->
+        <nav class="space-y-3">
             
             <!-- Link 1: Tentang Kami -->
-            <a href="tentang-kami.html" class="flex items-center justify-between p-4 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition">
-                <div class="flex items-center gap-3">
-                    <span class="text-base">🏢</span>
-                    <span class="font-medium text-sm text-gray-800">Tentang Kami</span>
-                </div>
-                <span class="text-gray-400 text-xs">→</span>
+            <a href="tentang-kami.html" class="block w-full text-center py-3.5 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition font-bold text-xs text-gray-800 tracking-wider uppercase">
+                TENTANG KAMI
             </a>
 
             <!-- Link 2: Produk -->
-            <a href="produk.html" class="flex items-center justify-between p-4 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition">
-                <div class="flex items-center gap-3">
-                    <span class="text-base">🏗️</span>
-                    <span class="font-medium text-sm text-gray-800">Produk & Katalog</span>
-                </div>
-                <span class="text-gray-400 text-xs">→</span>
+            <a href="produk.html" class="block w-full text-center py-3.5 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition font-bold text-xs text-gray-800 tracking-wider uppercase">
+                PRODUK
             </a>
 
             <!-- Link 3: Portofolio -->
-            <a href="portofolio.html" class="flex items-center justify-between p-4 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition">
-                <div class="flex items-center gap-3">
-                    <span class="text-base">📸</span>
-                    <span class="font-medium text-sm text-gray-800">Portofolio Proyek</span>
-                </div>
-                <span class="text-gray-400 text-xs">→</span>
+            <a href="portofolio.html" class="block w-full text-center py-3.5 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition font-bold text-xs text-gray-800 tracking-wider uppercase">
+                PORTOFOLIO
             </a>
 
             <!-- Link 4: Kontak -->
-            <a href="kontak.html" class="flex items-center justify-between p-4 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition">
-                <div class="flex items-center gap-3">
-                    <span class="text-base">📞</span>
-                    <span class="font-medium text-sm text-gray-800">Hubungi Kami</span>
-                </div>
-                <span class="text-gray-400 text-xs">→</span>
+            <a href="kontak.html" class="block w-full text-center py-3.5 bg-white hover:bg-gray-100 rounded-xl border border-gray-200 transition font-bold text-xs text-gray-800 tracking-wider uppercase">
+                KONTAK
             </a>
 
         </nav>
 
-        <!-- OFFICIAL MARKETPLACE LINKS -->
-        <div class="mt-8 pt-6 border-t border-gray-200 flex justify-center gap-4 text-xs font-medium">
-            <a href="#tokopedia" class="text-emerald-600 hover:underline">🟩 Tokopedia</a>
-            <a href="#shopee" class="text-orange-600 hover:underline">🟧 Shopee</a>
-        </div>
-
     </main>
 
     <!-- FOOTER -->
-    <footer class="w-full text-center py-4 text-[10px] text-gray-400 bg-white border-t border-gray-100">
-        &copy; 2026 Buana Paksa Indonesia.
+    <footer class="w-full text-center py-3 text-[9px] text-gray-400 bg-white border-t border-gray-100 uppercase tracking-widest">
+        &copy; 2026 BUANA PAKSA INDONESIA.
     </footer>
 
 </body>
