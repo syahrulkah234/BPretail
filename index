@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buana Paksa Retail - Material Konstruksi Terpercaya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & VARIABLE WARNA --- */
+        :root {
+            --primary: #1e293b; /* Charcoal/Navy Industrial */
+            --accent: #16a34a;  /* Hijau WhatsApp */
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #15803d;
+            transform: translateY(-2px);
+        }
+
+        /* --- ABOUT SECTION --- */
+        #about {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* --- PRODUCT CATALOG (GRID) --- */
+        #products {
+            padding: 60px 0;
+            background-color: var(--bg-light);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        /* --- CONTACT & FOOTER --- */
+        footer {
+            background-color: var(--primary);
+            color: #f1f5f9;
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .footer-info p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            nav { display: none; } /* Menyederhanakan tampilan mobile untuk uji coba awal */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Buana Paksa Retail</div>
+            <nav>
+                <a href="#about">Tentang Kami</a>
+                <a href="#products">Katalog</a>
+                <a href="#contact">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="container hero-content">
+            <h1>Material Konstruksi Retail Sesuai Kebutuhan Anda</h1>
+            <p>Pengadaan cepat, spesifikasi standar industri, langsung dikirim ke lokasi proyek Anda tanpa hambatan.</p>
+            <!-- Ganti nomor WA dibawah ini (format: 628xxx) -->
+            <a href="https://wa.me/6281266007500?text=Halo%20Buana%20Paksa%20Retail,%20saya%20ingin%20tanya%20mengenai%20material" class="btn" target="_blank">Hubungi via WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <div class="about-text">
+                <p>Buana Paksa Retail hadir untuk memotong birokrasi pengadaan bahan bangunan yang rumit. Kami melayani kebutuhan retail, kontraktor lokal, hingga pemilik hunian secara langsung dengan standar material pabrikasi yang teruji, andal, dan siap kirim tepat waktu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATALOG SECTION -->
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title">Kategori Produk</h2>
+            <div class="product-grid">
+                
+                <!-- Produk 1 -->
+                <div class="product-card">
+                    <div>
+                        <h3>Atap & Panel Lantai</h3>
+                        <p>Atap UPVC, Spandek, dan Panel Lantai modern. Kuat, tahan cuaca ekstrem, dan efisien untuk struktur masa kini.</p>
+                    </div>
+                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20Atap%20dan%20Panel%20Lantai" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
+                </div>
+
+                <!-- Produk 2 -->
+                <div class="product-card">
+                    <div>
+                        <h3>Sistem Insulasi</h3>
+                        <p>Solusi peredam panas dan suara optimal untuk gudang, ruang industrial, maupun hunian komersial.</p>
+                    </div>
+                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20Sistem%20Insulasi" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
+                </div>
+
+                <!-- Produk 3 -->
+                <div class="product-card">
+                    <div>
+                        <h3>Kawat & Mesh</h3>
+                        <p>Segala jenis kawat pagar, wiremesh, dan jaringan baja dengan daya tarik tinggi berstandar industri.</p>
+                    </div>
+                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20Kawat%20dan%20Mesh" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
+                </div>
+
+                <!-- Produk 4 -->
+                <div class="product-card">
+                    <div>
+                        <h3>Baja & Rangka</h3>
+                        <p>Steel Hollow dan rangka struktural presisi tinggi untuk fondasi bangunan yang kokoh jangka panjang.</p>
+                    </div>
+                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20Baja%20dan%20Rangka" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & CONTACT SECTION -->
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h4>Kantor </h4>
+                <p>Semarang, Jawa Tengah, Indonesia</p>
+                <p>Jam Kerja: Senin - Sabtu (08.00 - 17.00)</p>
+            </div>
+            <div class="footer-info">
+                <h4>Hubungi Tim Sales</h4>
+                <p>Email: info@buanapaksa.com</p>
+                <p>WhatsApp: +62 812-6600-7500</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Buana Paksa Retail. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
