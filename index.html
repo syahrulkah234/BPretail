@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buana Paksa Retail - Material Konstruksi Terpercaya</title>
+    <title>Buana Paksa Retail - Material Konstruksi & Insulasi Terpercaya</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* --- RESET & VARIABLE WARNA --- */
         :root {
-            --primary: #1e293b; /* Charcoal/Navy Industrial */
-            --accent: #16a34a;  /* Hijau WhatsApp */
+            --primary: #0f172a;    /* Deep Slate/Industrial Black */
+            --secondary: #1e293b;  /* Charcoal */
+            --accent: #16a34a;     /* Hijau WhatsApp */
+            --accent-hover: #15803d;
             --bg-light: #f8fafc;
-            --text-dark: #0f172a;
+            --bg-card: #ffffff;
+            --text-dark: #334155;
             --text-muted: #64748b;
+            --border: #e2e8f0;
         }
 
         * {
@@ -37,15 +41,16 @@
 
         .container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         /* --- NAVIGATION --- */
         header {
-            background: #ffffff;
-            border-bottom: 1px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -55,23 +60,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            height: 75px;
         }
 
         .logo {
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
         }
 
         nav a {
             text-decoration: none;
             color: var(--text-muted);
             font-weight: 600;
-            margin-left: 20px;
-            font-size: 0.95rem;
+            margin-left: 24px;
+            font-size: 0.9rem;
             transition: color 0.2s;
         }
 
@@ -81,145 +90,277 @@
 
         /* --- HERO SECTION --- */
         #hero {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            padding: 100px 0 80px 0;
+            background: radial-gradient(circle at top right, #f1f5f9 0%, #e2e8f0 100%);
             text-align: center;
         }
 
         .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--primary);
             margin-bottom: 20px;
             font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
         .hero-content p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
+            max-width: 650px;
+            margin: 0 auto 35px auto;
         }
 
         /* --- BUTTONS --- */
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background-color: var(--accent);
             color: white;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(22, 163, 74, 0.2);
+            transition: all 0.2s;
         }
 
         .btn:hover {
-            background-color: #15803d;
+            background-color: var(--accent-hover);
             transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.3);
         }
 
-        /* --- ABOUT SECTION --- */
-        #about {
-            padding: 60px 0;
+        /* --- ALUR ALUR PEMESANAN (PROCESS) --- */
+        #process {
+            padding: 50px 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .process-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--bg-light);
+            color: var(--primary);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 15px auto;
+        }
+
+        .process-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .process-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- COMMON SECTION STYLES --- */
+        .section {
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 40px;
+            font-size: 2rem;
+            margin-bottom: 12px;
             color: var(--primary);
-            position: relative;
+            font-weight: 700;
         }
 
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto;
+        .section-subtitle {
             text-align: center;
             color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            font-size: 1rem;
         }
 
         /* --- PRODUCT CATALOG (GRID) --- */
         #products {
-            padding: 60px 0;
             background-color: var(--bg-light);
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
         }
 
         .product-card {
-            background: white;
-            border: 1px solid #e2e8f0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 24px;
+            padding: 28px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: box-shadow 0.2s;
+            transition: all 0.2s;
         }
 
         .product-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.04);
+            border-color: #cbd5e1;
         }
 
         .product-card h3 {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: var(--primary);
+            font-size: 1.25rem;
         }
 
         .product-card p {
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             flex-grow: 1;
         }
 
+        /* Sub-items / Tags */
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 24px;
+        }
+
+        .tag {
+            background-color: var(--bg-light);
+            color: var(--secondary);
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            font-weight: 500;
+        }
+
         .btn-sm {
-            padding: 8px 16px;
+            padding: 10px 20px;
             font-size: 0.85rem;
             text-align: center;
+            justify-content: center;
+        }
+
+        /* --- PORTFOLIO SECTION --- */
+        #portfolio {
+            background-color: #ffffff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg-light);
+        }
+
+        /* Placeholder kotak visual */
+        .portfolio-img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .portfolio-info {
+            padding: 16px;
+        }
+
+        .portfolio-info h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .portfolio-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- ABOUT SECTION --- */
+        #about {
+            background-color: var(--bg-light);
+        }
+
+        .about-text {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--text-dark);
+            font-size: 1.05rem;
         }
 
         /* --- CONTACT & FOOTER --- */
         footer {
             background-color: var(--primary);
             color: #f1f5f9;
-            padding: 60px 0 30px 0;
+            padding: 80px 0 30px 0;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .footer-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
+            font-size: 1.15rem;
+            margin-bottom: 20px;
             color: #ffffff;
+            font-weight: 600;
         }
 
         .footer-info p {
-            color: #cbd5e1;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
         }
 
         .copyright {
             text-align: center;
-            border-top: 1px solid #334155;
-            padding-top: 20px;
-            font-size: 0.8rem;
-            color: #94a3b8;
+            border-top: 1px solid #1e293b;
+            padding-top: 24px;
+            font-size: 0.85rem;
+            color: #64748b;
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
-            nav { display: none; } /* Menyederhanakan tampilan mobile untuk uji coba awal */
+            .hero-content h1 { font-size: 2.2rem; }
+            nav { display: none; } 
+            .section { padding: 60px 0; }
         }
     </style>
 </head>
@@ -228,10 +369,11 @@
     <!-- NAVIGATION BAR -->
     <header>
         <div class="container nav-container">
-            <div class="logo">Buana Paksa Retail</div>
+            <div class="logo">Buana Paksa<span>.</span></div>
             <nav>
-                <a href="#about">Tentang Kami</a>
                 <a href="#products">Katalog</a>
+                <a href="#portfolio">Portofolio</a>
+                <a href="#about">Tentang Kami</a>
                 <a href="#contact">Kontak</a>
             </nav>
         </div>
@@ -240,65 +382,144 @@
     <!-- HERO SECTION -->
     <section id="hero">
         <div class="container hero-content">
-            <h1>Material Konstruksi Retail Sesuai Kebutuhan Anda</h1>
-            <p>Pengadaan cepat, spesifikasi standar industri, langsung dikirim ke lokasi proyek Anda tanpa hambatan.</p>
-            <!-- Ganti nomor WA dibawah ini (format: 628xxx) -->
-            <a href="https://wa.me/6281266007500?text=Halo%20Buana%20Paksa%20Retail,%20saya%20ingin%20tanya%20mengenai%20material" class="btn" target="_blank">Hubungi via WhatsApp</a>
+            <h1>Suplai Material Konstruksi Retail & Proyek Terjadwal</h1>
+            <p>Pangkas birokrasi pengadaan bangunan yang rumit. Dapatkan material fabrikasi standar industri langsung di lokasi Anda.</p>
+            <a href="https://wa.me/6281266007500?text=Halo%20Buana%20Paksa%20Retail,%20saya%20ingin%20konsultasi%20mengenai%20kebutuhan%20material" class="btn" target="_blank">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.179.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.907-11.893 11.907-2.01-.001-3.986-.51-5.742-1.477L0 24zm6.59-4.846c1.63.967 3.225 1.478 4.81 1.478 5.352 0 9.706-4.348 9.709-9.697.002-2.593-1.008-5.031-2.846-6.871C16.433 2.225 13.99 1.01 11.399 1.01c-5.356 0-9.71 4.354-9.713 9.703-.002 1.684.451 3.328 1.311 4.774L1.975 21.025l5.672-1.488z"/></svg>
+                Konsultasi & Penawaran Harga
+            </a>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about">
+    <!-- 3-STEP PROCESS SECTION -->
+    <section id="process">
         <div class="container">
-            <h2 class="section-title">Tentang Kami</h2>
-            <div class="about-text">
-                <p>Buana Paksa Retail hadir untuk memotong birokrasi pengadaan bahan bangunan yang rumit. Kami melayani kebutuhan retail, kontraktor lokal, hingga pemilik hunian secara langsung dengan standar material pabrikasi yang teruji, andal, dan siap kirim tepat waktu.</p>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <h4>Pilih Material</h4>
+                    <p>Tentukan kategori komponen konstruksi atau insulasi yang Anda butuhkan pada list di bawah.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <h4>Nego & Spek via WA</h4>
+                    <p>Hubungi admin untuk kalkulasi berat, volume kebutuhan, dan kesepakatan harga terbaik.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <h4>Kirim Langsung</h4>
+                    <p>Barang disiapkan dari gudang utama dan dikirim langsung ke titik koordinat proyek Anda.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- PRODUCT CATALOG SECTION -->
-    <section id="products">
+    <section id="products" class="section">
         <div class="container">
-            <h2 class="section-title">Kategori Produk</h2>
+            <h2 class="section-title">Kategori Produk Retail</h2>
+            <p class="section-subtitle">Akses instan ke lini material bangunan esensial tanpa minimum order yang memberatkan.</p>
+            
             <div class="product-grid">
                 
                 <!-- Produk 1 -->
                 <div class="product-card">
                     <div>
                         <h3>Atap & Panel Lantai</h3>
-                        <p>Atap UPVC, Spandek, dan Panel Lantai modern. Kuat, tahan cuaca ekstrem, dan efisien untuk struktur masa kini.</p>
+                        <p>Solusi penutup atap dan lantai modern yang ringan, presisi, serta memotong waktu pemasangan struktur secara signifikan.</p>
+                        <div class="product-tags">
+                            <span class="tag">Atap UPVC</span>
+                            <span class="tag">Spandek</span>
+                            <span class="tag">Panel Lantai ALC</span>
+                        </div>
                     </div>
-                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20Atap%20dan%20Panel%20Lantai" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
+                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20dan%20harga%20Atap%20atau%20Panel%20Lantai" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
                 </div>
 
                 <!-- Produk 2 -->
                 <div class="product-card">
                     <div>
                         <h3>Sistem Insulasi</h3>
-                        <p>Solusi peredam panas dan suara optimal untuk gudang, ruang industrial, maupun hunian komersial.</p>
+                        <p>Lapisan penahan suhu panas dan redam suara berkualitas premium untuk bangunan komersial, pabrik, gudang, maupun hunian.</p>
+                        <div class="product-tags">
+                            <span class="tag">Rockwool</span>
+                            <span class="tag">Glasswool</span>
+                            <span class="tag">Aluminium Foil</span>
+                        </div>
                     </div>
-                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20Sistem%20Insulasi" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
+                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20dan%20harga%20Sistem%20Insulasi" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
                 </div>
 
                 <!-- Produk 3 -->
                 <div class="product-card">
                     <div>
                         <h3>Kawat & Mesh</h3>
-                        <p>Segala jenis kawat pagar, wiremesh, dan jaringan baja dengan daya tarik tinggi berstandar industri.</p>
+                        <p>Rangkaian anyaman kawat baja komersial dengan kekuatan tarik tinggi untuk kebutuhan pagar keamanan, filter, dan struktural beton.</p>
+                        <div class="product-tags">
+                            <span class="tag">Wiremesh</span>
+                            <span class="tag">Kawat Pagar Harmonika</span>
+                            <span class="tag">Kawat Silet</span>
+                        </div>
                     </div>
-                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20Kawat%20dan%20Mesh" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
+                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20dan%20harga%20Kawat%20atau%20Mesh" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
                 </div>
 
                 <!-- Produk 4 -->
                 <div class="product-card">
                     <div>
                         <h3>Baja & Rangka</h3>
-                        <p>Steel Hollow dan rangka struktural presisi tinggi untuk fondasi bangunan yang kokoh jangka panjang.</p>
+                        <p>Baja struktural profil ringan dan hollow presisi tinggi untuk menjamin fondasi serta dudukan dinding bangunan tetap kokoh.</p>
+                        <div class="product-tags">
+                            <span class="tag">Besi Hollow</span>
+                            <span class="tag">Baja Ringan</span>
+                            <span class="tag">Gypsum Frame</span>
+                        </div>
                     </div>
-                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20Baja%20dan%20Rangka" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
+                    <a href="https://wa.me/6281266007500?text=Halo%20Admin,%20saya%20ingin%20tanya%20stok%20dan%20harga%20Baja%20atau%20Rangka%20Konstruksi" class="btn btn-sm" target="_blank">Tanya Stok & Spek</a>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Aktivitas & Portofolio</h2>
+            <p class="section-subtitle">Dokumentasi asli proses pengiriman material dari gudang menuju lokasi proyek konsumen kami.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img-placeholder">[ Foto Pengiriman Truk Atap ]</div>
+                    <div class="portfolio-info">
+                        <h4>Suplai Atap UPVC & Baja Ringan</h4>
+                        <p>Retail Toko / Proyek Ruko - Semarang Barat</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img-placeholder">[ Foto Muat Kawat Wiremesh ]</div>
+                    <div class="portfolio-info">
+                        <h4>Pengiriman Jaringan Kawat Baja</h4>
+                        <p>Kontraktor Gudang Komersial - Kendal</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img-placeholder">[ Foto Dokumentasi Material Insulasi ]</div>
+                    <div class="portfolio-info">
+                        <h4>Distribusi Sistem Insulasi Panas</h4>
+                        <p>Kebutuhan Pabrik Industri - Demak</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Tentang Buana Paksa Retail</h2>
+            <div class="about-text">
+                <p>Kami mendedikasikan layanan khusus untuk memotong kerumitan rantai pasok material konstruksi. Berfokus pada fleksibilitas kuantitas pemesanan ritel tanpa mengorbankan mutu, kami memastikan kontraktor lokal, pemilik bisnis, dan perorangan mendapatkan akses produk berstandar pabrikasi secara instan, aman, dan transparan langsung dari regional Semarang[cite: 1].</p>
             </div>
         </div>
     </section>
@@ -307,14 +528,20 @@
     <footer id="contact">
         <div class="container footer-grid">
             <div class="footer-info">
-                <h4>Kantor </h4>
-                <p>Semarang, Jawa Tengah, Indonesia</p>
+                <h4>Kantor & Pusat Distribusi</h4>
+                <p>Semarang, Central Java, Indonesia</p>
                 <p>Jam Kerja: Senin - Sabtu (08.00 - 17.00)</p>
             </div>
             <div class="footer-info">
-                <h4>Hubungi Tim Sales</h4>
+                <h4>Hubungi Penjualan</h4>
                 <p>Email: info@buanapaksa.com</p>
-                <p>WhatsApp: +62 812-6600-7500</p>
+                <p>WhatsApp Resmi: +62 812-6600-7500</p>
+            </div>
+            <div class="footer-info">
+                <h4>Keunggulan Layanan</h4>
+                <p>✓ Bebas Konsultasi Spek Teknis</p>
+                <p>✓ Penyesuaian Armada Angkut</p>
+                <p>✓ Validitas Stok Riil</p>
             </div>
         </div>
         <div class="copyright">
